@@ -66,6 +66,80 @@
 
 
 
+//higher order array loop
+// for of loop
+
+const arr = [1,2,3,4];
+for(const num of arr){
+    console.log(num);
+}
+
+const greetings = "sagar";
+for(const greet of greetings) {
+    console.log(greet);
+}
+
+
+// Map  - unique values and also remembers order of insertion
+
+const map=new Map();
+map.set('IN', "India");
+map.set('USA', "America");
+//printing map
+for(const key of map){
+    console.log(key);
+}
+//it will print whole map not just key so to do seperately we do this
+for(const [key,value] of map){
+    console.log(key +"::"+value );
+}
+
+//we can't iterate object using loop
+
+const myObj= {
+    js: "javascript",
+    cpp:"c++",
+}
+// for in loop can be used for iterating in object 
+for (const key in myObj){
+    console.log(key +"->"+myObj[key]);
+}
+// key will give you keys not all things 
+
+// iterating on an array
+const shortcuts =["js", "cpp", "ruby"];
+for(const key in shortcuts){
+    console.log(key);
+}
+//0 ,1, 2
+for(const key in shortcuts){
+    console.log(shortcuts[key]);
+}
+// js,cpp,ruby
+// we can't iterate on map using for-in loop bcz map is not iteratable like array
+
+
+//for-each loop
+const coding =["js","ruby","java","python","ruby","cpp"]
+coding.forEach( function (val){
+   console.log(val);
+})
+//print all values 
+//arr.forEach(callback function ) -- callback function does not have name 
+//more syntaxs
+coding.forEach((val)=>{
+    console.log(val);
+})
+//same answer
+
+function printVal(item){
+    console.log(item)
+}
+coding.forEach(printVal);  //only give refernce don't execute it 
+//same answer
+
+// the above callback has three parameters in it - Element, index, array(current iterating)
+
 
 
 

@@ -41,7 +41,7 @@ function processExpression(exp){
        // operator
            else   {
                 
-                    
+                //checking precedence
                 while((findPrecedence(operatorSt[operatorSt.length-1])>findPrecedence(exp[i])) && (operatorSt.length!=0)){
                    let result= calculateResult(operandSt,operatorSt);
                    operandSt.push(result);
@@ -57,14 +57,14 @@ function processExpression(exp){
         let res=calculateResult(operandSt,operatorSt);
         operandSt.push(res);
     }
-
+   //returning final answer
    return operandSt[operandSt.length-1];
 
 }
 
 // checking for operator
 function isOperator(ch){
-    if(ch=='+'|| ch=='*'|| ch=='/'|| ch=='-'){
+    if(ch=='+'|| ch=='*'|| ch=='/'|| ch=='-'){     //use include
         return true;
     }
     return false;
@@ -72,7 +72,7 @@ function isOperator(ch){
 
 // returning precedence of operators
 function findPrecedence(ch){
-    if(ch=='^') return 3;
+    if(ch=='^') return 3;                 //do not use if conditions
     if(ch=='/' || ch=='*') return 2;
     if(ch=='+' || ch=='-') return 1;
     return 0;
@@ -89,7 +89,7 @@ function calculateResult(operandSt, operatorSt){
     operandSt.pop();
 
     if(operator=='+'){
-        return n1+n2;
+        return n1+n2;   //review points ['+','-'] use include
     }
     if(operator == '*') {
         return n1*n2;
@@ -103,3 +103,5 @@ function calculateResult(operandSt, operatorSt){
   
 }
 console.log(processExpression("2*(5*(3+6))/15-2"));
+
+console.log(eval("2*(5*(3+6))/15-2"));
