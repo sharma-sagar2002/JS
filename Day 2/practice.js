@@ -140,8 +140,13 @@ coding.forEach(printVal);  //only give refernce don't execute it
 
 // the above callback has three parameters in it - Element, index, array(current iterating)
 
+//rest vs spread
+function displayValues (val1,val2, ...nums){
+    console.log(nums);
 
-
-
+}
+const nums=[4,5,6];
+console.log(...nums);  4 5 6
+ displayValues(1,2,3,...nums);  // (1,2,3,4,5,6)
 
 
